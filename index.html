@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <h1>Advanced Quiz</h1>
+        <div class="quiz-header">
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+            <div class="timer">
+                <span id="countdown">15</span>s
+            </div>
+        </div>
+        <div class="timer-bar">
+            <div class="timer-progress" id="timer-progress"></div>
+        </div>
+        <div class="quiz">
+            <div id="loading" class="loading">Loading questions...</div>
+            <span class="category" id="category">General Knowledge</span>
+            <h2 id="question">Question goes here</h2>
+            <div id="answer-buttons">
+                
+            </div>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

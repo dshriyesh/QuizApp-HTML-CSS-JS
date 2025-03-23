@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.app {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.app:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.app h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.difficulty-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.difficulty-btn {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 20px;
+    background: #eee;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.difficulty-btn.active {
+    background: #140ec0;
+    color: white;
+}
+
+.timer {
+    background: #f5f5f5;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.timer-bar {
+    height: 6px;
+    background: #eee;
+    border-radius: 3px;
+    width: 100%;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.timer-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    width: 100%;
+    transition: width 1s linear;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.category {
+    display: inline-block;
+    background: #f1f1f1;
+    color: #666;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background: #fff;
+    color: #333;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    margin: 12px 0;
+    text-align: left;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover:not([disabled]) {
+    background: #f9f9f9;
+    border-color: #140ec0;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+#next-btn {
+    background: linear-gradient(90deg, #140ec0, #4776E6);
+    color: #fff;
+    font-weight: 600;
+    width: 180px;
+    border: 0;
+    padding: 12px;
+    margin: 25px auto 0;
+    border-radius: 30px;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+#next-btn:hover {
+    background: linear-gradient(90deg, #0e0a8a, #3a65d1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(20, 14, 192, 0.3);
+}
+
+.correct {
+    background: linear-gradient(90deg, #43c6ac, #28a745);
+    color: white;
+}
+
+.incorrect {
+    background: linear-gradient(90deg, #ff5e62, #ff9966);
+    color: white;
+}
+
+.score-container {
+    text-align: center;
+}
+
+.score-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.score-details {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.loading {
+    text-align: center;
+    padding: 30px;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #eee;
+    border-radius: 50%;
+    border-top-color: #140ec0;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
